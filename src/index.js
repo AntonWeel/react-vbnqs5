@@ -1,13 +1,26 @@
-import React, { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import reportWebVitals from './reportWebVitals';
+import { Routes, Route } from "react-router-dom";
+import Nft from './nft';
 
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
+<Routes>
+<Route path="/nft" element={<Nft />} />
+</Routes>
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <StrictMode>
+  
+  <React.StrictMode>
     <App />
-  </StrictMode>
+    <Nft />
+  </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
